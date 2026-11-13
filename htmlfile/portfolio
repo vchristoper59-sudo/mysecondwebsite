@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f1df;
+            color: #33271f;
+        }
+
+        /* NAVIGATION BAR */
+        header {
+            background-color: #bd7b16;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #33271f;
+        }
+
+        /* HOME SECTION */
+        .home {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 45px;
+            padding: 60px 10%;
+        }
+
+        .home-text {
+            max-width: 550px;
+        }
+
+        .home-text h4 {
+            font-size: 16px;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            color: #9c681b;
+        }
+
+        .home-text h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .home-text h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .home-text p {
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #49372a;
+            color: white;
+            padding: 13px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #bd7b16;
+            transform: translateY(-3px);
+        }
+
+        /* PROFILE PICTURE */
+        .profile {
+            width: 310px;
+            height: 310px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid white;
+            box-shadow: 0 8px 25px #00000020;
+            flex-shrink: 0;
+        }
+
+        /* OTHER SECTIONS */
+        section:not(.home) {
+            padding: 65px 10%;
+            text-align: center;
+        }
+
+        section:not(.home) h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #9c681b;
+        }
+
+        section:not(.home) p {
+            line-height: 1.8;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .skills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .skill {
+            background-color: white;
+            border: 1px solid #e5d4b7;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .project-box {
+            background-color: white;
+            padding: 25px;
+            margin: 20px auto;
+            max-width: 650px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px #00000010;
+        }
+
+        .project-box h3 {
+            margin-bottom: 12px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #49372a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        /* MOBILE DESIGN */
+        @media (max-width: 768px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .home {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 45px 7%;
+            }
+
+            .home-text h1 {
+                font-size: 38px;
+            }
+
+            .home-text h2 {
+                font-size: 23px;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .profile {
+                width: 230px;
+                height: 230px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">CHRISTOPHER</div>
+
+        <nav>
+            <a href="#home">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#skills">MY SKILLS</a>
+            <a href="#projects">PROJECTS</a>
+            <a href="#contact">CONTACT</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="home" id="home">
+
+            <div class="home-text">
+                <h4>HELLO!</h4>
+                <h1>I'm Christopher</h1>
+                <h2>An Aspiring IT Professional</h2>
+
+                <p>
+                    I am an Information Technology student who is passionate
+                    about learning web development, programming, and modern
+                    technology. I want to improve my skills and create
+                    useful and creative digital projects.
+                </p>
+
+                <div class="buttons">
+                    <a href="#contact" class="btn">Hire Me</a>
+                    <a href="#projects" class="btn">View Portfolio</a>
+                </div>
+            </div>
+
+            <!-- Replace profile.jpg with your picture's filename -->
+            <img src="profile.jpg"
+                 alt="Christopher's Profile Picture"
+                 class="profile">
+
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                I am currently studying Information Technology.
+                I enjoy learning about computers, coding, and website
+                design. My goal is to become a skilled IT professional
+                and use technology to solve real-world problems.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>My Skills</h2>
+
+            <div class="skills">
+                <div class="skill">HTML</div>
+                <div class="skill">CSS</div>
+                <div class="skill">Java</div>
+                <div class="skill">Computer Skills</div>
+                <div class="skill">Problem Solving</div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+
+            <div class="project-box">
+                <h3>My Biography Website</h3>
+                <p>A personal website created using HTML and CSS.</p>
+            </div>
+
+            <div class="project-box">
+                <h3>Java Programming Activities</h3>
+                <p>Console-based programs created to practice Java,
+                   loops, conditions, and problem solving.</p>
+            </div>
+
+            <div class="project-box">
+                <h3>Personal Portfolio</h3>
+                <p>A website that presents my background, skills,
+                   and projects as an IT student.</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>
+                Thank you for visiting my portfolio!
+                You can contact me at:
+            </p>
+            <p>Email: your-email@example.com</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Christopher Valdez | My Personal Portfolio</p>
+    </footer>
+
+</body>
+</html>

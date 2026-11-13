@@ -1,0 +1,183 @@
+
+import java.util.Scanner;
+import java.time.LocalDate;
+import java.time.Period;
+
+public class MidTeermlab{
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        int choice = 0;
+
+        do {
+            System.out.println("\n");
+            System.out.println(" CHRISTOPER HELPER");
+            System.out.println("");
+            System.out.println("1. Print Multiplication Table");
+            System.out.println("2. Check if a Word is a Palindrome");
+            System.out.println("3. Display Current Date and Calculate Age");
+            System.out.println("4. Draw a Diamond Pattern");
+            System.out.println("5. Display SDG Awareness Message");
+            System.out.println("6. Exit");
+            System.out.println("");
+            System.out.print("Enter your choice: ");
+
+            try {
+                String menuInput = input.nextLine();
+                Number menuNumber = Integer.valueOf(menuInput);
+                choice = menuNumber.intValue();
+
+                switch (choice) {
+
+                    case 1:
+                        System.out.print("Enter a number: ");
+                        Number tableNumber =
+                            Integer.valueOf(input.nextLine());
+                        int number = tableNumber.intValue();
+
+                        System.out.println("\nMultiplication Table of " + number);
+                        for (int i = 1; i <= 10; i++) {
+                            System.out.println(number + " x " + i
+                                    + " = " + (number * i));
+                        }
+                        break;
+
+                    case 2:
+                        System.out.print("Enter a word: ");
+                        String word = input.nextLine();
+
+                        String cleanWord = word.replaceAll("\\s+", "")
+                                               .toLowerCase();
+
+                        String reversedWord =
+                            new StringBuilder(cleanWord).reverse().toString();
+
+                        if (cleanWord.isEmpty()) {
+                            System.out.println("Please enter a valid word.");
+                        } else if (cleanWord.equals(reversedWord)) {
+                            System.out.println(word
+                                    + " is a palindrome!");
+                        } else {
+                            System.out.println(word
+                                    + " is not a palindrome.");
+                        }
+                        break;
+
+                    case 3:
+                        LocalDate today = LocalDate.now();
+
+                        System.out.println("Current Date: " + today);
+                        System.out.print(
+                            "Enter your birth date (YYYY-MM-DD): ");
+
+                        LocalDate birthDate =
+                            LocalDate.parse(input.nextLine());
+
+                        if (birthDate.isAfter(today)) {
+                            System.out.println(
+                                "Invalid birth date. It cannot be in the future.");
+                        } else {
+                            Period age = Period.between(birthDate, today);
+
+                            System.out.println("Your age is "
+                                    + age.getYears() + " years, "
+                                    + age.getMonths() + " months, and "
+                                    + age.getDays() + " days.");
+                        }
+                        break;
+
+                    case 4:
+                        System.out.print(
+                            "Enter the size of the diamond (1-20): ");
+
+                        Number sizeNumber =
+                            Integer.valueOf(input.nextLine());
+                        int size = sizeNumber.intValue();
+
+                        if (size < 1 || size > 20) {
+                            System.out.println(
+                                "Please enter a size from 1 to 20.");
+                        } else {
+                            // Upper half of the diamond
+                            for (int i = 1; i <= size; i++) {
+                                for (int j = i; j < size; j++) {
+                                    System.out.print(" ");
+                                }
+                                for (int j = 1; j <= (2 * i - 1); j++) {
+                                    System.out.print("*");
+                                }
+                                System.out.println();
+                            }
+
+                            // Lower half of the diamond
+                            for (int i = size - 1; i >= 1; i--) {
+                                for (int j = size; j > i; j--) {
+                                    System.out.print(" ");
+                                }
+                                for (int j = 1; j <= (2 * i - 1); j++) {
+                                    System.out.print("*");
+                                }
+                                System.out.println();
+                            }
+                        }
+                        break;
+
+                    case 5:
+                        System.out.println("\n SDG AWARENESS ");
+                        System.out.println(
+                            "The Sustainable Development Goals (SDGs) "
+                            + "are goals created by the United Nations "
+                            + "to help make the world a better place.");
+                        System.out.println();
+                        System.out.println("SDG 4: Quality Education");
+                        System.out.println(
+                            "Everyone deserves access to quality education.");
+                        System.out.println();
+                        System.out.println("SDG 12: Responsible Consumption");
+                        System.out.println(
+                            "Reduce waste, reuse materials, and recycle.");
+                        System.out.println();
+                        System.out.println("SDG 13: Climate Action");
+                        System.out.println(
+                            "Help protect the environment and reduce pollution.");
+                        break;
+
+                    case 6:
+                        System.out.println(
+                            "Thank you for using Smart Student Helper!");
+                        System.out.println("Good luck with your studies!");
+                        break;
+
+                    default:
+                        System.out.println(
+                            "Invalid choice! Please select a number from 1 to 6.");
+                }
+
+            } catch (NumberFormatException e) {
+                System.out.println(
+                    "Invalid input! Please enter a valid number.");
+            } catch (java.time.format.DateTimeParseException e) {
+                System.out.println(
+                    "Invalid date! Please use the format YYYY-MM-DD.");
+            } catch (Exception e) {
+                System.out.println(
+                    "Something went wrong. Please try again.");
+            }
+
+        } while (choice != 6);
+
+        input.close();
+    }
+}
+//1. How does your program handle invalid user input or choices?
+
+//I used `try-catch` statements to detect invalid inputs and display an error message.
+
+//2. Explain how you computed the user’s age using the LocalDate class.
+
+//I used `LocalDate` to get the current date and `Period.between()` to calculate the user's age based on their birth date.
+
+//3. Why are looping structures necessary in this kind of menu-driven program?
+
+//I used loops so the menu will appear repeatedly until the user chooses option 6 to exit.

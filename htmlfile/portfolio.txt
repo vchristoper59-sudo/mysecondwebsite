@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emma — Full Stack Developer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #f3ebd8;
+      color: #1a1a1a;
+    }
+
+    /* ---------- Navbar ---------- */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #d99a2b;
+      padding: 18px 48px;
+    }
+
+    .logo {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: #1a1a1a;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #1a1a1a;
+      transition: opacity 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.6;
+    }
+
+    .nav-links a.active {
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+      padding: 90px 48px;
+      min-height: 70vh;
+      background: linear-gradient(135deg, #f5eeda 0%, #ece0c4 100%);
+    }
+
+    .hero-text {
+      max-width: 520px;
+    }
+
+    .eyebrow {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #8a6a2a;
+      margin-bottom: 18px;
+    }
+
+    .hero-text h1 {
+      font-size: 54px;
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .hero-text h2 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 30px;
+      font-weight: 400;
+      margin-bottom: 22px;
+    }
+
+    .hero-text p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #4a4436;
+      max-width: 380px;
+      margin-bottom: 34px;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 16px;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+      padding: 14px 30px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #3a3a3a;
+      color: #fdf8ec;
+      border: 1px solid #3a3a3a;
+    }
+
+    .btn-primary:hover {
+      background: #1a1a1a;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #3a3a3a;
+      border: 1px solid #3a3a3a;
+    }
+
+    .btn-secondary:hover {
+      background: #3a3a3a;
+      color: #fdf8ec;
+    }
+
+    .hero-photo {
+      flex-shrink: 0;
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1px solid #d8c8a4;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+    }
+
+    /* ---------- Footer ---------- */
+    .footer {
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: #7a705c;
+      padding: 26px 20px;
+      border-top: 1px solid #e2d6ba;
+      background: #f5eeda;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 900px) {
+      .navbar {
+        padding: 16px 24px;
+      }
+
+      .nav-links {
+        gap: 16px;
+      }
+
+      .nav-links a {
+        font-size: 9px;
+        letter-spacing: 1px;
+      }
+
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 60px 24px;
+        gap: 40px;
+      }
+
+      .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .btn-row {
+        justify-content: center;
+      }
+
+      .hero-text h1 {
+        font-size: 40px;
+      }
+
+      .hero-text h2 {
+        font-size: 24px;
+      }
+
+      .hero-photo {
+        width: 260px;
+        height: 260px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">Emma</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">My Skills</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <p class="eyebrow">Hello</p>
+      <h1>I'm Emma</h1>
+      <h2>a full stack developer</h2>
+      <p>
+        Passionate about creating beautiful and functional web experiences
+        that are fast, accessible and a pleasure to use.
+      </p>
+      <div class="btn-row">
+        <a href="#contact" class="btn btn-primary">Hire Me</a>
+        <a href="#portfolio" class="btn btn-secondary">Portfolio</a>
+      </div>
+    </div>
+
+    <div class="hero-photo">
+      <img
+        src="[images.unsplash.com](https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=800&q=80)"
+        alt="Portrait of Emma"
+      />
+    </div>
+  </section>
+
+  <footer class="footer">
+    Design by Emma &copy; 2025
+  </footer>
+
+</body>
+</html>
